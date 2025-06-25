@@ -1,12 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Addtask = ({ addToTask, }) => {
+const Addtask = ({ addToTask, taskToEdit, editIndex }) => {
 
     const [title, setTitle] = useState("")
     const [details, setDetails] = useState("")
 
+    useEffect(() => {
+        if(taskToEdit){
+            setTitle(taskToEdit.title);
+            setDetails(taskToEdit.details)
+        }else{
+            setTitle('')
+            setDetails('')
+        }
+    }, [taskToEdit])
+
     const userTask = {title, details}
     const addTask = () =>{
+        if(!title.trim()) return;
         addToTask(userTask)
         console.log(userTask);
         setTitle('')
@@ -25,8 +36,11 @@ const Addtask = ({ addToTask, }) => {
             value={details} 
             placeholder='Details of Your Task' 
             onChange={(e)=>setDetails(e.target.value)} />
-        <button onClick={addTask} 
-            className='addTaskBtn'>+</button>
+        <button 
+            onClick={addTask} 
+            className='addTaskBtn'
+        >{editIndex !== null ? '✔' : '+'}
+        </button>
     </div>
   )
 }

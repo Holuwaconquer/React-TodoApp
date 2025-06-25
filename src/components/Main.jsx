@@ -5,7 +5,7 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 import TaskCount from './TaskCount'
 
-const Main = ({ addToTask, taskArray, deleteTask, completeTask, completedArray }) => {
+const Main = ({ addToTask, taskArray, editIndex, taskToEdit, deleteTask, completeTask, completedArray, editTask }) => {
     const [value, setValue] = useState(new Date())
   return (
     <>
@@ -53,8 +53,12 @@ const Main = ({ addToTask, taskArray, deleteTask, completeTask, completedArray }
                     </div>
                 </div>
                 <div className='taskSection'>
-                    <Addtask addToTask={addToTask} />
-                    <DisplayTask completeTask={completeTask} deleteTask={deleteTask} taskArray={taskArray} addToTask={addToTask}/>
+                    <Addtask 
+                        addToTask={addToTask} 
+                        editIndex={editIndex}
+                        taskToEdit={taskToEdit}
+                    />
+                    <DisplayTask editTask={editTask} completeTask={completeTask} deleteTask={deleteTask} taskArray={taskArray} addToTask={addToTask}/>
                 </div>
             </div>
             <div className='taskCount'>

@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Delete from '../assets/delete.svg'
 import Edit from '../assets/edit.svg'
 import Checkbox from '../assets/CheckCircle.svg'
 
-const DisplayTask = ({ addToTask, taskArray, deleteTask, completeTask }) => {
+const DisplayTask = ({ addToTask, taskArray, deleteTask, completeTask, editTask }) => {
     
-    const archiveTask = () =>{
-        completeTask(taskArray)
+    const archiveTask = (index) =>{
+        completeTask(index)
     }
+
   return (
     <>
         <div className='cardContainer'>
@@ -21,10 +22,13 @@ const DisplayTask = ({ addToTask, taskArray, deleteTask, completeTask }) => {
                             </div>
                             <div className='icon'>
                                 <div>
-                                    <button onClick={archiveTask}>
-                                        <img style={{width: '35px'}} src={Checkbox} alt="" />
-                                    </button>
-                                    <button>
+                                    {!task.completed && (
+                                        <button onClick={() =>archiveTask(index)}>
+                                            <img style={{width: '35px'}} src={Checkbox} alt="" />
+                                        </button>
+
+                                    )}
+                                    <button onClick={() => editTask(index)}>
                                         <img src={Edit} alt="" />
                                     </button> 
                                     <button onClick={() => deleteTask(index)}>
