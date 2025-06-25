@@ -1,5 +1,8 @@
 import React from 'react'
-import Profile from '../assets/profile.png'
+import Facebook from '../assets/Facebook.png'
+import Github from '../assets/github.png'
+import Newlinkedin from '../assets/NewLinkedin.png'
+import Twitter from '../assets/Twitter.png'
 
 const Footer = () => {
   return (
@@ -12,7 +15,10 @@ const Footer = () => {
                 <p>&copy; 2025 Conquer Tab. All Right Reserved.</p>
             </div>
             <div className='logo'>
-                <img style={{width: '50px'}} src={Profile} alt="" />
+                <img style={{width: '30px'}} src={Facebook} alt="" />
+                <img style={{width: '30px'}} src={Newlinkedin} alt="" />
+                <img style={{width: '30px'}} src={Twitter} alt="" />
+                <img style={{width: '30px'}} src={Github} alt="" />
             </div>
         </div>
     </div>
