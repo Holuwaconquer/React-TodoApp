@@ -3,7 +3,7 @@ import Delete from '../assets/delete.svg'
 import Edit from '../assets/edit.svg'
 import Checkbox from '../assets/CheckCircle.svg'
 
-const DisplayTask = ({ addToTask, taskArray, deleteTask, completeTask, editTask }) => {
+const DisplayTask = ({ taskArray, deleteTask, completeTask, editTask }) => {
     
     const archiveTask = (index) =>{
         completeTask(index)
@@ -12,7 +12,7 @@ const DisplayTask = ({ addToTask, taskArray, deleteTask, completeTask, editTask 
   return (
     <>
         <div className='cardContainer'>
-                {
+                {taskArray.length > 0 ? 
                     taskArray.map((task, index) => (
                         <div key={index} className='cardDiv'>
                             <div className='cardContent'>
@@ -37,7 +37,15 @@ const DisplayTask = ({ addToTask, taskArray, deleteTask, completeTask, editTask 
                                 </div>
                             </div>
                         </div>
-                    ))
+                    )) : <p style={{
+                            textAlign: 'center', 
+                            fontSize: '2em',
+                            transform: 'translate(50%, 50%)'
+                            }}
+                            >No task added yet! 
+                            <br/> 
+                            use the input above to start adding task
+                        </p>
                 }
         </div>
     </>
