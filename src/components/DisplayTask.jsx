@@ -37,7 +37,7 @@ const DisplayTask = ({ taskArray, deleteTask, completeTask, editTask }) => {
                                 </div>
                             </div>
                         </div>
-                    )) : <p style={{
+                    )) : <p className='noContent' style={{
                             textAlign: 'center', 
                             fontSize: '2em',
                             transform: 'translate(50%, 50%)'

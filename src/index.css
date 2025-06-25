@@ -173,6 +173,10 @@ body{
   html, body{
     overflow-x: hidden;
   }
+  .noContent{
+    transform: translate(0) !important;
+    font-size: 1.5em !important;
+  }
   .cardContainer{
     grid-template-columns: 1fr;
     grid-template-rows: auto;
