@@ -89,6 +89,7 @@ body{
   gap: 1em;
   margin: 20px 0;
 }
+
 .cardDiv{
   display: grid;
   grid-template-columns: 3fr 0.2fr;
@@ -165,4 +166,39 @@ body{
 
 .logo{
   font-family: "UnifrakturMaguntia", cursive;
+}
+
+
+@media screen and (max-width: 998px) {
+  html, body{
+    overflow-x: hidden;
+  }
+  .cardContainer{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .calenderFeatures{
+    display: none;
+  }
+  .mainTop{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .taskSection{
+    justify-self: normal;
+  }
+  .TaskInput{
+    grid-template-columns: 1fr;
+    gap: 0.6em;
+  }
+  .taskCountDiv{
+    grid-template-columns: 1fr;
+  }
+  .footerBar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: center;
+  }
 }

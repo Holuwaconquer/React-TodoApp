@@ -29,7 +29,7 @@ const Main = ({ addToTask, taskArray, editIndex, taskToEdit, deleteTask, complet
                             year: 'numeric'
                         })
                     }</h1>
-                    <div style={
+                    <div className='calenderFeatures' style={
                         {
                             backgroundColor: 'white',
                             textAlign: 'center',
