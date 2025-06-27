@@ -37,6 +37,7 @@ const Addtask = ({ addToTask, taskToEdit, editIndex }) => {
             placeholder='Details of Your Task' 
             onChange={(e)=>setDetails(e.target.value)} />
         <button 
+            style={{cursor: 'pointer'}}
             onClick={addTask} 
             className='addTaskBtn'
         >{editIndex !== null ? '✔' : '+'}

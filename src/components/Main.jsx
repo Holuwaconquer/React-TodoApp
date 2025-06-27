@@ -47,8 +47,6 @@ const Main = ({ addToTask, taskArray, editIndex, taskToEdit, deleteTask, complet
                             value={value}
                             activeStartDate={new Date()}
                             showWeekNumbers={true}
-                            showNavigation={false}
-                            showNeighboringMonth={false}
                         />
                     </div>
                 </div>
@@ -58,7 +56,7 @@ const Main = ({ addToTask, taskArray, editIndex, taskToEdit, deleteTask, complet
                         editIndex={editIndex}
                         taskToEdit={taskToEdit}
                     />
-                    <DisplayTask editTask={editTask} completeTask={completeTask} deleteTask={deleteTask} taskArray={taskArray} addToTask={addToTask}/>
+                    <DisplayTask value={value.toLocaleDateString()} editTask={editTask} completeTask={completeTask} deleteTask={deleteTask} taskArray={taskArray} addToTask={addToTask}/>
                 </div>
             </div>
             <div className='taskCount'>

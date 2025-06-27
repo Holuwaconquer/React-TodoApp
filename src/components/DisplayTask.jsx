@@ -3,7 +3,7 @@ import Delete from '../assets/delete.svg'
 import Edit from '../assets/edit.svg'
 import Checkbox from '../assets/CheckCircle.svg'
 
-const DisplayTask = ({ taskArray, deleteTask, completeTask, editTask }) => {
+const DisplayTask = ({ taskArray, deleteTask, completeTask, editTask, value }) => {
     
     const archiveTask = (index) =>{
         completeTask(index)
@@ -19,6 +19,7 @@ const DisplayTask = ({ taskArray, deleteTask, completeTask, editTask }) => {
                                 <h2>{task.title}</h2>
                                 <p>{task.details}</p>
                                 <h4>Date Added: {new Date().toLocaleDateString()}</h4>
+                                <h4>Target Date: {value}</h4>
                             </div>
                             <div className='icon'>
                                 <div>

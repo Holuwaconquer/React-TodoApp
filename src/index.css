@@ -26,6 +26,7 @@ body{
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 10;
 }
 .FooterContainer{
   background-color: var(--bg-color);
@@ -180,9 +181,6 @@ body{
   .cardContainer{
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-  }
-  .calenderFeatures{
-    display: none;
   }
   .mainTop{
     grid-template-columns: 1fr;
